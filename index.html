@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Por Que Você Come Menos e Engorda Mais — E-book Menopausa</title>
+    <meta name="description" content="Entenda o que mudou no seu metabolismo durante a menopausa e o que realmente funciona para se sentir bem nessa fase. E-book por R$ 42,99.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --wine:          #5C1F35;
+            --wine-dark:     #3D1222;
+            --wine-light:    #7A2D47;
+            --rose:          #A64D6B;
+            --terracotta:    #C4622D;
+            --terra-dark:    #A3511F;
+            --cream:         #FDF6F0;
+            --beige:         #F0E3D3;
+            --nude:          #E8D0BC;
+            --white:         #FFFFFF;
+            --text-dark:     #2C1810;
+            --text-body:     #4A3728;
+            --text-light:    #7A6055;
+            --text-on-dark:  #F5E8DF;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-body);
+            background: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            line-height: 1.25;
+        }
+
+        /* ── STICKY HEADER ── */
+        .sticky-header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: var(--wine-dark);
+            padding: 11px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            transform: translateY(-100%);
+            transition: transform 0.35s ease;
+            box-shadow: 0 2px 24px rgba(0,0,0,0.35);
+        }
+        .sticky-header.visible { transform: translateY(0); }
+        .sh-title {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: rgba(245,232,223,0.75);
+            font-size: 0.82rem;
+            line-height: 1.3;
+            display: none;
+        }
+        @media (min-width: 480px) { .sh-title { display: block; } }
+        .btn-sh {
+            flex-shrink: 0;
+            background: var(--terracotta);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .btn-sh:hover { background: var(--terra-dark); }
+
+        /* ── BUTTONS ── */
+        .btn-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #D4752F, var(--terracotta));
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 10px;
+            padding: 18px 36px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 8px 28px rgba(196,98,45,0.45);
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+            text-align: center;
+            width: 100%;
+            max-width: 440px;
+        }
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 38px rgba(196,98,45,0.55);
+        }
+        .btn-cta:active { transform: translateY(0); }
+
+        .btn-cta-wine {
+            background: linear-gradient(135deg, var(--wine-light), var(--wine));
+            box-shadow: 0 8px 28px rgba(92,31,53,0.35);
+        }
+        .btn-cta-wine:hover { box-shadow: 0 12px 38px rgba(92,31,53,0.45); }
+
+        .cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        .cta-note { font-size: 0.78rem; color: rgba(245,232,223,0.55); letter-spacing: 0.3px; }
+        .cta-note-dark { color: var(--text-light); }
+
+        /* ── LAYOUT ── */
+        section { padding: 72px 20px; }
+        .container { max-width: 720px; margin: 0 auto; }
+
+        /* ── HERO ── */
+        .s-hero {
+            background: linear-gradient(155deg, var(--wine-dark) 0%, var(--wine) 55%, var(--wine-light) 100%);
+            padding: 90px 20px 72px;
+            text-align: center;
+            color: var(--text-on-dark);
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(184,134,11,0.18);
+            border: 1px solid rgba(184,134,11,0.45);
+            color: #E8C96A;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 5px 16px;
+            border-radius: 20px;
+            margin-bottom: 32px;
+        }
+
+        /* book illustration */
+        .book {
+            width: 160px;
+            height: 216px;
+            background: linear-gradient(145deg, #7A2D47 0%, #3D1222 100%);
+            border-radius: 3px 14px 14px 3px;
+            margin: 0 auto 36px;
+            position: relative;
+            box-shadow: -5px 5px 0 rgba(0,0,0,0.25), 10px 18px 45px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 14px;
+            text-align: center;
+        }
+        .book::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 16px;
+            background: linear-gradient(to right, rgba(0,0,0,0.35), rgba(0,0,0,0.04));
+            border-radius: 3px 0 0 3px;
+        }
+        .book::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(130deg, rgba(255,255,255,0.08) 0%, transparent 55%);
+            border-radius: 3px 14px 14px 3px;
+            pointer-events: none;
+        }
+        .book-icon { font-size: 2.2rem; margin-bottom: 10px; }
+        .book-label {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.65rem;
+            color: rgba(245,232,223,0.85);
+            line-height: 1.5;
+        }
+        .book-tag {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.55rem;
+            color: rgba(245,232,223,0.4);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .s-hero h1 {
+            font-size: clamp(1.75rem, 5.5vw, 2.9rem);
+            color: white;
+            max-width: 680px;
+            margin: 0 auto 22px;
+        }
+        .s-hero h1 em { font-style: italic; color: #F0C4A8; }
+        .hero-sub {
+            font-size: clamp(1rem, 2.5vw, 1.13rem);
+            color: rgba(245,232,223,0.82);
+            max-width: 540px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+            line-height: 1.75;
+        }
+        .hero-price {
+            color: rgba(245,232,223,0.75);
+            font-size: 0.88rem;
+            margin-bottom: 10px;
+        }
+        .hero-price strong { font-size: 1.45rem; color: white; font-weight: 700; }
+        .hero-urgency {
+            margin-top: 18px;
+            font-size: 0.78rem;
+            color: rgba(245,232,223,0.52);
+            letter-spacing: 0.3px;
+        }
+        .hero-urgency b { color: #E8C96A; }
+
+        /* ── DOR ── */
+        .s-dor { background: var(--cream); text-align: center; }
+        .s-dor h2 {
+            font-size: clamp(1.45rem, 4vw, 2.1rem);
+            color: var(--wine);
+            margin-bottom: 10px;
+        }
+        .section-lead {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-style: italic;
+            max-width: 520px;
+            margin: 0 auto 44px;
+        }
+        .dor-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+        .dor-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: white;
+            border-left: 4px solid var(--rose);
+            border-radius: 0 10px 10px 0;
+            padding: 16px 18px;
+            box-shadow: 0 2px 14px rgba(92,31,53,0.06);
+            text-align: left;
+        }
+        .dor-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 1px; }
+        .dor-item p { font-size: 0.93rem; color: var(--text-body); line-height: 1.65; }
+        .dor-closure {
+            margin-top: 40px;
+            background: linear-gradient(135deg, var(--wine), var(--wine-light));
+            border-radius: 14px;
+            padding: 26px 28px;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.03rem;
+            line-height: 1.6;
+        }
+        .dor-closure strong { color: #F0C4A8; font-style: normal; }
+
+        /* ── CRENÇA ── */
+        .s-crenca {
+            background: linear-gradient(155deg, var(--wine-dark), #6B2840);
+            color: var(--text-on-dark);
+            text-align: center;
+        }
+        .s-crenca h2 {
+            font-size: clamp(1.45rem, 4vw, 2.1rem);
+            color: white;
+            margin-bottom: 10px;
+        }
+        .s-crenca .section-lead { color: rgba(245,232,223,0.65); }
+        .crenca-grid { display: flex; flex-direction: column; gap: 18px; }
+        .crenca-card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.11);
+            border-radius: 14px;
+            padding: 26px 22px;
+            text-align: left;
+        }
+        .crenca-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: rgba(240,196,168,0.25);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .crenca-card h3 {
+            font-size: 1rem;
+            color: #F0C4A8;
+            margin-bottom: 10px;
+        }
+        .crenca-card p {
+            font-size: 0.91rem;
+            color: rgba(245,232,223,0.78);
+            line-height: 1.72;
+        }
+
+        /* ── APRENDER ── */
+        .s-aprender { background: var(--beige); text-align: center; }
+        .s-aprender h2 {
+            font-size: clamp(1.45rem, 4vw, 2.1rem);
+            color: var(--wine);
+            margin-bottom: 10px;
+        }
+        .aprender-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            text-align: left;
+        }
+        .aprender-item {
+            background: white;
+            border-radius: 12px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            box-shadow: 0 2px 14px rgba(92,31,53,0.06);
+        }
+        .ap-check {
+            width: 30px; height: 30px;
+            background: var(--wine);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-top: 1px;
+        }
+        .aprender-item p { font-size: 0.91rem; color: var(--text-body); line-height: 1.65; }
+        .aprender-item strong {
+            display: block;
+            color: var(--wine);
+            font-size: 0.93rem;
+            margin-bottom: 3px;
+        }
+
+        /* ── BÔNUS ── */
+        .s-bonus {
+            background: linear-gradient(155deg, #421525, #7A2D47);
+            color: var(--text-on-dark);
+            text-align: center;
+        }
+        .bonus-badge {
+            display: inline-block;
+            background: rgba(184,134,11,0.22);
+            border: 1px solid rgba(184,134,11,0.55);
+            color: #E8C96A;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 5px 16px;
+            border-radius: 20px;
+            margin-bottom: 22px;
+        }
+        .s-bonus h2 {
+            font-size: clamp(1.45rem, 4vw, 2.1rem);
+            color: white;
+            margin-bottom: 8px;
+        }
+        .bonus-sub {
+            color: rgba(245,232,223,0.6);
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+        }
+        .bonus-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.13);
+            border-radius: 18px;
+            padding: 32px 24px;
+            max-width: 580px;
+            margin: 0 auto 32px;
+        }
+        .bonus-card-icon { font-size: 2.8rem; margin-bottom: 14px; }
+        .bonus-card h3 {
+            font-size: 1.35rem;
+            color: #F0C4A8;
+            margin-bottom: 5px;
+        }
+        .bonus-tagline {
+            color: rgba(245,232,223,0.55);
+            font-size: 0.83rem;
+            font-style: italic;
+            margin-bottom: 26px;
+        }
+        .bonus-features { list-style: none; display: flex; flex-direction: column; gap: 13px; text-align: left; }
+        .bonus-features li {
+            display: flex; align-items: flex-start; gap: 10px;
+            font-size: 0.91rem;
+            color: rgba(245,232,223,0.82);
+            line-height: 1.6;
+        }
+        .bonus-features li::before { content: '✦'; color: #E8C96A; flex-shrink: 0; margin-top: 2px; }
+        .bonus-bridge {
+            max-width: 560px;
+            margin: 0 auto;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.03rem;
+            color: rgba(245,232,223,0.75);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 28px;
+            line-height: 1.7;
+        }
+        .bonus-bridge em { color: #F0C4A8; font-style: normal; }
+
+        /* ── PARA QUEM ── */
+        .s-para-quem { background: var(--cream); text-align: center; }
+        .s-para-quem h2 {
+            font-size: clamp(1.45rem, 4vw, 2.1rem);
+            color: var(--wine);
+            margin-bottom: 10px;
+        }
+        .pq-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 18px; }
+        .pq-card {
+            background: white;
+            border-radius: 14px;
+            padding: 22px;
+            text-align: left;
+            box-shadow: 0 2px 14px rgba(92,31,53,0.06);
+            border-top: 3px solid var(--rose);
+        }
+        .pq-icon { font-size: 1.6rem; margin-bottom: 10px; }
+        .pq-card h3 {
+            font-size: 0.97rem;
+            color: var(--wine);
+            margin-bottom: 8px;
+        }
+        .pq-card p { font-size: 0.88rem; color: var(--text-body); line-height: 1.65; }
+        .nao-card {
+            background: #FEF8F5;
+            border: 1px solid rgba(196,98,45,0.22);
+            border-top: 3px solid var(--terracotta);
+            border-radius: 14px;
+            padding: 22px;
+            text-align: left;
+        }
+        .nao-card h3 {
+            font-size: 0.97rem;
+            color: var(--terra-dark);
+            margin-bottom: 8px;
+        }
+        .nao-card p { font-size: 0.88rem; color: var(--text-body); line-height: 1.65; }
+
+        /* ── CONTEÚDO ── */
+        .s-conteudo {
+            background: var(--wine-dark);
+            color: var(--text-on-dark);
+            text-align: center;
+        }
+        .s-conteudo h2 {
+            font-size: clamp(1.45rem, 4vw, 2.1rem);
+            color: white;
+            margin-bottom: 10px;
+        }
+        .s-conteudo .section-lead { color: rgba(245,232,223,0.62); }
+        .capitulos { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; text-align: left; }
+        .cap {
+            display: flex; align-items: flex-start; gap: 16px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 11px;
+            padding: 18px 20px;
+        }
+        .cap-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: rgba(240,196,168,0.28);
+            flex-shrink: 0;
+            width: 28px;
+            line-height: 1;
+            margin-top: 2px;
+        }
+        .cap h4 {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.93rem;
+            font-weight: 700;
+            color: #F0C4A8;
+            margin-bottom: 5px;
+        }
+        .cap p { font-size: 0.84rem; color: rgba(245,232,223,0.65); line-height: 1.6; }
+        .disclaimer {
+            font-size: 0.78rem;
+            color: rgba(245,232,223,0.38);
+            font-style: italic;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding-top: 24px;
+            line-height: 1.65;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* ── GARANTIA ── */
+        .s-garantia { background: var(--beige); text-align: center; }
+        .garantia-icon {
+            width: 82px; height: 82px;
+            background: linear-gradient(135deg, var(--wine), var(--wine-light));
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 26px;
+            box-shadow: 0 8px 28px rgba(92,31,53,0.22);
+        }
+        .s-garantia h2 {
+            font-size: clamp(1.45rem, 4vw, 2.1rem);
+            color: var(--wine);
+            margin-bottom: 18px;
+        }
+        .s-garantia p {
+            font-size: 0.95rem;
+            color: var(--text-body);
+            max-width: 560px;
+            margin: 0 auto 14px;
+            line-height: 1.72;
+        }
+        .garantia-quote {
+            background: white;
+            border-radius: 14px;
+            padding: 22px 28px;
+            max-width: 500px;
+            margin: 28px auto 0;
+            border: 2px solid rgba(92,31,53,0.1);
+        }
+        .garantia-quote p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--wine);
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* ── CTA FINAL ── */
+        .s-cta-final {
+            background: linear-gradient(155deg, var(--wine-dark), var(--wine));
+            text-align: center;
+            color: var(--text-on-dark);
+        }
+        .s-cta-final h2 {
+            font-size: clamp(1.6rem, 4.5vw, 2.45rem);
+            color: white;
+            max-width: 600px;
+            margin: 0 auto 18px;
+        }
+        .s-cta-final > .container > p {
+            color: rgba(245,232,223,0.78);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto 38px;
+            line-height: 1.75;
+        }
+        .price-block { margin-bottom: 30px; }
+        .price-label-small {
+            font-size: 0.8rem;
+            color: rgba(245,232,223,0.55);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .price-big {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4rem, 6vw, 3.2rem);
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+        }
+        .price-big sup { font-size: 1.1rem; color: rgba(245,232,223,0.7); font-weight: 400; vertical-align: super; }
+        .price-fine {
+            font-size: 0.78rem;
+            color: rgba(245,232,223,0.45);
+            margin-top: 6px;
+        }
+        .cta-close {
+            margin-top: 36px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: rgba(240,196,168,0.75);
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--wine-dark);
+            padding: 32px 20px;
+            text-align: center;
+        }
+        footer p {
+            font-size: 0.76rem;
+            color: rgba(245,232,223,0.3);
+            line-height: 1.65;
+            max-width: 580px;
+            margin: 0 auto 6px;
+        }
+        footer a { color: rgba(245,232,223,0.45); text-decoration: none; }
+        .footer-divider {
+            width: 40px;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+            margin: 18px auto;
+        }
+
+        /* ── SCROLL REVEAL ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .d1 { transition-delay: 0.08s; }
+        .d2 { transition-delay: 0.16s; }
+        .d3 { transition-delay: 0.24s; }
+        .d4 { transition-delay: 0.32s; }
+        .d5 { transition-delay: 0.40s; }
+
+        /* ── RESPONSIVE ── */
+        @media (min-width: 600px) {
+            .aprender-grid { grid-template-columns: 1fr 1fr; }
+            .pq-grid { grid-template-columns: 1fr 1fr; }
+            .crenca-grid { flex-direction: row; }
+            .crenca-card { flex: 1; }
+        }
+        @media (min-width: 768px) {
+            section { padding: 96px 32px; }
+            .s-hero { padding: 120px 32px 96px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ──────────────── STICKY HEADER ──────────────── -->
+<header class="sticky-header" id="stickyHeader">
+    <div class="sh-title">E-book: Por que você come menos e engorda mais na menopausa</div>
+    <button class="btn-sh" onclick="ctaClick('sticky')">Comprar — R$ 42,99</button>
+</header>
+
+<!-- ──────────────── HERO ──────────────── -->
+<section class="s-hero" id="topo">
+    <div class="container">
+        <div class="hero-badge reveal">🔥 56% OFF · Oferta de lançamento — por tempo limitado</div>
+
+        <div class="book reveal d1" aria-hidden="true">
+            <div class="book-icon">📖</div>
+            <div class="book-label">Por que você come menos e engorda mais — e o que fazer diferente na menopausa</div>
+            <div class="book-tag">E-book · PDF</div>
+        </div>
+
+        <h1 class="reveal d2">
+            Você <em>come menos, se esforça mais</em> — e o seu corpo continua fazendo o que bem entende.
+        </h1>
+
+        <p class="hero-sub reveal d3">
+            Este e-book explica, em linguagem simples e sem julgamentos, o que mudou no seu metabolismo durante a menopausa — e o que você pode fazer de diferente para voltar a se sentir bem dentro do próprio corpo.
+        </p>
+
+        <div class="cta-wrap reveal d4">
+            <p class="hero-price">
+                <span style="text-decoration:line-through; opacity:0.55; font-size:0.9rem;">R$ 98,99</span>
+                &nbsp;→&nbsp; apenas <strong>R$ 42,99</strong>
+            </p>
+            <a href="javascript:void(0)" class="btn-cta" onclick="ctaClick('hero')">
+                QUERO MEU E-BOOK AGORA
+            </a>
+            <span class="cta-note">🔒 Compra segura · Acesso imediato em PDF · Garantia de 7 dias</span>
+        </div>
+
+        <p class="hero-urgency reveal d5">
+            <b>⚡ Preço promocional de lançamento</b> — pode aumentar a qualquer momento.
+        </p>
+    </div>
+</section>
+
+<!-- ──────────────── DOR ──────────────── -->
+<section class="s-dor">
+    <div class="container">
+        <h2 class="reveal">Você se reconhece em alguma dessas situações?</h2>
+        <p class="section-lead reveal">Se qualquer uma delas soar familiar, saiba: você não está sozinha — e não é culpa sua.</p>
+
+        <ul class="dor-list">
+            <li class="dor-item reveal">
+                <span class="dor-icon" aria-hidden="true">😞</span>
+                <p>Você cortou carboidrato, reduziu as porções e está fazendo caminhada todo dia — mas a barriga simplesmente não vai embora.</p>
+            </li>
+            <li class="dor-item reveal d1">
+                <span class="dor-icon" aria-hidden="true">😞</span>
+                <p>Você come hoje o que sempre comeu, mas o corpo responde como se fosse o dobro. Parece que engorda só de olhar para o pão.</p>
+            </li>
+            <li class="dor-item reveal d2">
+                <span class="dor-icon" aria-hidden="true">😞</span>
+                <p>Você já tentou de tudo: jejum intermitente, low carb, dieta da lua, detox de 21 dias — e o ponteiro da balança mal se mexe.</p>
+            </li>
+            <li class="dor-item reveal d3">
+                <span class="dor-icon" aria-hidden="true">😞</span>
+                <p>As roupas que serviam perfeitamente dois anos atrás agora não fecham mais — e você não sabe exatamente o que mudou.</p>
+            </li>
+            <li class="dor-item reveal">
+                <span class="dor-icon" aria-hidden="true">😞</span>
+                <p>Você se sente traída pelo próprio corpo: fez tudo certo a vida toda, e agora nada funciona da mesma forma.</p>
+            </li>
+            <li class="dor-item reveal d1">
+                <span class="dor-icon" aria-hidden="true">😞</span>
+                <p>Você começa a achar que "é da idade" e que não há mais nada a fazer — mas no fundo se recusa a aceitar isso.</p>
+            </li>
+        </ul>
+
+        <div class="dor-closure reveal">
+            <strong>A estratégia estava errada — não você.</strong><br>
+            O que funcionava aos 35 anos não funciona mais aos 50, e isso tem uma explicação fisiológica muito clara. Você vai entender cada parte dela neste e-book.
+        </div>
+    </div>
+</section>
+
+<!-- ──────────────── QUEBRA DE CRENÇA ──────────────── -->
+<section class="s-crenca">
+    <div class="container">
+        <h2 class="reveal">O que mudou no seu corpo — e que quase ninguém explica direito</h2>
+        <p class="section-lead reveal">Não é falta de força de vontade. É biologia.</p>
+
+        <div class="crenca-grid">
+            <div class="crenca-card reveal">
+                <div class="crenca-num">01</div>
+                <h3>A queda do estrogênio muda tudo</h3>
+                <p>O estrogênio não regula só o ciclo menstrual — ele também ajuda a distribuir a gordura corporal, protege a massa muscular e influencia como o corpo usa a energia. Quando ele cai, o organismo passa a armazenar gordura de maneira diferente, especialmente na região abdominal. Não é preguiça, não é fraqueza — é hormônio.</p>
+            </div>
+            <div class="crenca-card reveal d1">
+                <div class="crenca-num">02</div>
+                <h3>O metabolismo desacelera — mas tem saída</h3>
+                <p>Com a menopausa, o corpo começa a gastar menos energia em repouso. Isso significa que comer as mesmas quantidades de antes já gera sobra. Mas entender esse mecanismo é o primeiro passo para adaptar o que você come — sem precisar passar fome nem seguir dietas extremas que não duram uma semana.</p>
+            </div>
+            <div class="crenca-card reveal d2">
+                <div class="crenca-num">03</div>
+                <h3>Menos músculo = gordura que avança</h3>
+                <p>A partir dos 40 anos, o corpo perde massa muscular progressivamente. Como o músculo consome muita energia, menos músculo significa metabolismo ainda mais lento. A boa notícia: é possível reverter boa parte disso com escolhas simples de alimentação e movimento — sem academia cara ou dieta de atleta.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ──────────────── O QUE VAI APRENDER ──────────────── -->
+<section class="s-aprender">
+    <div class="container">
+        <h2 class="reveal">O que você vai aprender neste e-book</h2>
+        <p class="section-lead reveal">Conhecimento prático, sem jargão médico. Para aplicar hoje, não "um dia desses".</p>
+
+        <div class="aprender-grid">
+            <div class="aprender-item reveal">
+                <div class="ap-check" aria-hidden="true">✓</div>
+                <p><strong>Por que o corpo muda na menopausa</strong>A fisiologia da mudança explicada de forma que você possa entender — e até explicar para alguém.</p>
+            </div>
+            <div class="aprender-item reveal d1">
+                <div class="ap-check" aria-hidden="true">✓</div>
+                <p><strong>Por que cortar comida pode piorar a situação</strong>O paradoxo da restrição calórica extrema nessa fase — e o que substituir essa estratégia.</p>
+            </div>
+            <div class="aprender-item reveal d2">
+                <div class="ap-check" aria-hidden="true">✓</div>
+                <p><strong>Como comer para preservar músculo e queimar gordura</strong>Quais padrões alimentares fazem diferença real durante e após a menopausa.</p>
+            </div>
+            <div class="aprender-item reveal d3">
+                <div class="ap-check" aria-hidden="true">✓</div>
+                <p><strong>O papel do sono e do estresse no peso</strong>Como noites mal dormidas e cortisol elevado sabotam qualquer esforço alimentar — e o que fazer.</p>
+            </div>
+            <div class="aprender-item reveal">
+                <div class="ap-check" aria-hidden="true">✓</div>
+                <p><strong>Movimento que funciona para o corpo da menopausa</strong>Qual tipo de atividade traz mais benefício nessa fase — e o que pode estar atrapalhando sem você saber.</p>
+            </div>
+            <div class="aprender-item reveal d1">
+                <div class="ap-check" aria-hidden="true">✓</div>
+                <p><strong>Como lidar com a relação emocional com a comida</strong>O comer por ansiedade e por conforto aparece mais nessa fase — e tem uma saída mais leve do que você imagina.</p>
+            </div>
+            <div class="aprender-item reveal d2">
+                <div class="ap-check" aria-hidden="true">✓</div>
+                <p><strong>Como criar uma rotina alimentar que você realmente consegue manter</strong>Sem listas de alimentos proibidos, sem contagem de calorias, sem culpa na primeira exceção.</p>
+            </div>
+            <div class="aprender-item reveal d3">
+                <div class="ap-check" aria-hidden="true">✓</div>
+                <p><strong>O que observar além da balança</strong>Sinais de que o seu corpo está respondendo bem — mesmo quando o número ainda não mudou.</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 52px;" class="cta-wrap reveal">
+            <a href="javascript:void(0)" class="btn-cta btn-cta-wine" onclick="ctaClick('aprender')">
+                QUERO ENTENDER MEU CORPO DE VEZ
+            </a>
+            <span class="cta-note cta-note-dark">E-book em PDF · Acesso imediato · R$ 42,99</span>
+        </div>
+    </div>
+</section>
+
+<!-- ──────────────── BÔNUS: PLENA ──────────────── -->
+<section class="s-bonus">
+    <div class="container">
+        <div class="bonus-badge reveal">✦ Bônus exclusivo</div>
+        <h2 class="reveal">O e-book te dá o mapa.<br>O Plena te ajuda a percorrer o caminho.</h2>
+        <p class="bonus-sub reveal">Incluído na sua compra, sem custo adicional.</p>
+
+        <div class="bonus-card reveal">
+            <div class="bonus-card-icon" aria-hidden="true">🍽️</div>
+            <h3>Plena — Assistente Culinário Inteligente</h3>
+            <div class="bonus-tagline">Porque saber o que comer é uma coisa. Conseguir cozinhar no dia a dia é outra.</div>
+
+            <ul class="bonus-features">
+                <li>Sugere receitas personalizadas com os ingredientes que você já tem em casa — sem precisar comprar nada além do que está na sua geladeira.</li>
+                <li>Adapta o cardápio às suas preferências e restrições sem rigidez e sem fórmulas prontas. Cada sugestão faz sentido para a sua rotina.</li>
+                <li>Gera lista de compras automaticamente, para que a semana comece organizada e sem improviso de última hora.</li>
+                <li>Acompanha você na prática do dia a dia, tornando mais fácil manter uma alimentação equilibrada mesmo com agenda cheia.</li>
+            </ul>
+        </div>
+
+        <p class="bonus-bridge reveal">
+            Enquanto o e-book te explica <em>o porquê de cada escolha</em>, o Plena te acompanha <em>na prática de todo dia</em> — para que o conhecimento saia do PDF e entre na sua vida real, sem depender só de força de vontade.
+        </p>
+    </div>
+</section>
+
+<!-- ──────────────── PARA QUEM É ──────────────── -->
+<section class="s-para-quem">
+    <div class="container">
+        <h2 class="reveal">Este e-book foi feito para você?</h2>
+        <p class="section-lead reveal">Leia os perfis abaixo e veja se você se reconhece.</p>
+
+        <div class="pq-grid">
+            <div class="pq-card reveal">
+                <div class="pq-icon" aria-hidden="true">👩</div>
+                <h3>A mulher que fez tudo certo — e sente que perdeu o controle</h3>
+                <p>Você seguiu dietas, cortou açúcar, bebeu água, fez exercício. Mas o corpo não coopera mais. Você está cansada de tentar sem ver resultado e quer entender o que está acontecendo de verdade.</p>
+            </div>
+            <div class="pq-card reveal d1">
+                <div class="pq-icon" aria-hidden="true">👩‍💼</div>
+                <h3>A mulher ocupada que não tem tempo para complicação</h3>
+                <p>Você tem uma vida cheia — trabalho, família, compromissos. Não quer contar caloria nem fazer receita com 15 ingredientes. Quer entender o que funciona de forma prática e sustentável.</p>
+            </div>
+            <div class="pq-card reveal d2">
+                <div class="pq-icon" aria-hidden="true">🤍</div>
+                <h3>A mulher que quer se sentir bem — não entrar em forma para agradar alguém</h3>
+                <p>Você não está buscando um corpo diferente para os outros. Quer energia, disposição e conforto com a própria pele. Este e-book fala exatamente sobre isso — não sobre estética ou números na balança.</p>
+            </div>
+        </div>
+
+        <div class="nao-card reveal">
+            <div class="pq-icon" aria-hidden="true">⚠️</div>
+            <h3>Este e-book NÃO é para você se...</h3>
+            <p>Você está buscando um cardápio fechado, um plano alimentar rígido ou uma promessa de "perca X quilos em X semanas". Este conteúdo não oferece isso — e desconfia de quem oferece. Aqui você vai encontrar entendimento e orientação, não receita mágica. Se for isso que você quer, este não é o lugar certo — e tudo bem.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ──────────────── SOBRE O CONTEÚDO ──────────────── -->
+<section class="s-conteudo">
+    <div class="container">
+        <h2 class="reveal">O que está dentro do e-book</h2>
+        <p class="section-lead reveal">Conteúdo educacional e comportamental — sem dietas restritivas, sem contagem de calorias.</p>
+
+        <div class="capitulos">
+            <div class="cap reveal">
+                <div class="cap-num">1</div>
+                <div>
+                    <h4>O que acontece com o corpo na menopausa</h4>
+                    <p>Mudanças hormonais e fisiológicas explicadas com clareza — para que você pare de se sentir culpada pelo que está acontecendo e passe a entender o que realmente mudou.</p>
+                </div>
+            </div>
+            <div class="cap reveal d1">
+                <div class="cap-num">2</div>
+                <div>
+                    <h4>Por que as estratégias antigas não funcionam mais</h4>
+                    <p>Uma análise honesta das abordagens mais comuns e por que elas falham especificamente nessa fase — inclusive as que um dia funcionaram muito bem para você.</p>
+                </div>
+            </div>
+            <div class="cap reveal d2">
+                <div class="cap-num">3</div>
+                <div>
+                    <h4>Alimentação que conversa com o metabolismo da menopausa</h4>
+                    <p>Quais padrões alimentares têm respaldo científico para essa fase — sem cardápio fechado, sem lista de alimentos proibidos, sem culpa.</p>
+                </div>
+            </div>
+            <div class="cap reveal">
+                <div class="cap-num">4</div>
+                <div>
+                    <h4>Movimento, músculo e metabolismo</h4>
+                    <p>O papel do exercício no metabolismo da menopausa — e como incorporar mais movimento na rotina sem precisar viver dentro de uma academia.</p>
+                </div>
+            </div>
+            <div class="cap reveal d1">
+                <div class="cap-num">5</div>
+                <div>
+                    <h4>Sono, estresse e o sabotador invisível</h4>
+                    <p>Como o cortisol elevado e a privação de sono afetam diretamente o peso — e o que dá para fazer para equilibrar esses fatores mesmo em meio a uma rotina intensa.</p>
+                </div>
+            </div>
+            <div class="cap reveal d2">
+                <div class="cap-num">6</div>
+                <div>
+                    <h4>Construindo uma relação mais leve com a comida</h4>
+                    <p>Sobre fome emocional, comer por ansiedade e como criar hábitos que realmente duram — não regras que você abandona na primeira sexta-feira.</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="disclaimer reveal">
+            Este e-book tem caráter exclusivamente informativo e educacional. As informações aqui contidas não substituem consulta, diagnóstico ou orientação de médico, nutricionista ou qualquer outro profissional de saúde. Em caso de dúvidas sobre sua saúde, procure sempre um profissional qualificado.
+        </p>
+    </div>
+</section>
+
+<!-- ──────────────── GARANTIA ──────────────── -->
+<section class="s-garantia">
+    <div class="container" style="max-width: 600px; text-align: center;">
+        <div class="garantia-icon reveal" aria-hidden="true">🛡️</div>
+        <h2 class="reveal">Garantia total de 7 dias</h2>
+
+        <p class="reveal">
+            Você tem 7 dias completos para ler o e-book, explorar o material e decidir se ele vale para você. Se por qualquer motivo não ficar satisfeita, é só solicitar o reembolso — o valor cai de volta na sua conta sem burocracia e sem precisar dar nenhuma explicação.
+        </p>
+        <p class="reveal">
+            Essa é a política padrão da Kiwify, a plataforma onde você vai fazer a sua compra. É uma compra sem risco, de verdade.
+        </p>
+
+        <div class="garantia-quote reveal">
+            <p>"Ou o e-book transforma a forma como você entende o seu próprio corpo — ou você não paga nada por ele."</p>
+        </div>
+    </div>
+</section>
+
+<!-- ──────────────── CTA FINAL ──────────────── -->
+<section class="s-cta-final">
+    <div class="container">
+        <h2 class="reveal">Você já passou tempo demais se sentindo culpada por algo que não era culpa sua.</h2>
+
+        <p class="reveal">
+            Agora é a hora de entender o que realmente está acontecendo — e começar a caminhar em outra direção. Com conhecimento, com leveza, e sem promessas que não se cumprem.
+        </p>
+
+        <div class="price-block reveal">
+            <div class="price-label-small">oferta especial de lançamento</div>
+            <div style="font-size:1rem; color:rgba(245,232,223,0.5); text-decoration:line-through; margin-bottom:4px; letter-spacing:0.5px;">
+                de R$ 98,99
+            </div>
+            <div class="price-big"><sup>R$&nbsp;</sup>42<sup>,99</sup></div>
+            <div style="display:inline-block; background:rgba(184,134,11,0.22); border:1px solid rgba(184,134,11,0.5); color:#E8C96A; font-size:0.72rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:4px 14px; border-radius:20px; margin-top:10px; margin-bottom:6px;">
+                56% de desconto
+            </div>
+            <div class="price-fine">Acesso imediato em PDF · Garantia incondicional de 7 dias · Pagamento seguro</div>
+        </div>
+
+        <div class="cta-wrap reveal">
+            <a href="javascript:void(0)" class="btn-cta" onclick="ctaClick('cta-final')">
+                QUERO COMEÇAR AGORA
+            </a>
+            <span class="cta-note">🔒 Cartão de crédito, Pix ou Boleto · Processado pela Kiwify</span>
+        </div>
+
+        <p class="cta-close reveal">
+            O seu corpo mudou. Mas ele não virou seu inimigo.<br>
+            Ele só precisa que você o entenda de um jeito novo.
+        </p>
+    </div>
+</section>
+
+<!-- ──────────────── FOOTER ──────────────── -->
+<footer>
+    <p>© 2025 · Todos os direitos reservados</p>
+    <div class="footer-divider"></div>
+    <p>Este produto é vendido e entregue pela plataforma <a href="https://kiwify.com.br" target="_blank" rel="noopener">Kiwify</a>. O conteúdo deste e-book é de caráter informativo e educacional e não constitui prescrição médica ou nutricional.</p>
+    <p style="margin-top: 8px; font-size: 0.7rem; color: rgba(245,232,223,0.18);">Dúvidas? Entre em contato.</p>
+</footer>
+
+<script>
+    // ── CONFIGURAÇÃO ─────────────────────────────
+    // Substitua pela URL real da Kiwify antes de publicar
+    const KIWIFY_URL = 'https://pay.kiwify.com.br/AYuCyxN';
+
+    // ── CTA handler ──────────────────────────────
+    function ctaClick(section) {
+        console.log('CTA clicado: ' + section);
+        // Para rastrear com pixel, adicione aqui:
+        // fbq('track', 'InitiateCheckout', { content_name: section });
+        // gtag('event', 'begin_checkout', { item_name: section });
+        window.open(KIWIFY_URL, '_blank', 'noopener');
+    }
+
+    // ── STICKY HEADER ────────────────────────────
+    const header  = document.getElementById('stickyHeader');
+    const heroEl  = document.getElementById('topo');
+
+    const heroObs = new IntersectionObserver(
+        ([e]) => header.classList.toggle('visible', !e.isIntersecting),
+        { threshold: 0.05 }
+    );
+    heroObs.observe(heroEl);
+
+    // ── SCROLL REVEAL ────────────────────────────
+    const reveals = document.querySelectorAll('.reveal');
+
+    const revealObs = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObs.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -36px 0px' }
+    );
+
+    reveals.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            el.classList.add('visible');    // já visível no carregamento
+        } else {
+            revealObs.observe(el);
+        }
+    });
+</script>
+
+</body>
+</html>
