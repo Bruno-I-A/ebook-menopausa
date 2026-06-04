@@ -1,0 +1,24 @@
+{
+  "name": "video-ads-menopausa",
+  "version": "1.0.0",
+  "description": "Criativos em vídeo para Meta Ads — e-book menopausa",
+  "scripts": {
+    "start": "remotion studio",
+    "render:v1": "remotion render src/index.ts V1_QuebraDeCrencia --output out/v1.mp4",
+    "render:v2": "remotion render src/index.ts V2_Identificacao --output out/v2.mp4",
+    "render:v3": "remotion render src/index.ts V3_Curiosidade --output out/v3.mp4",
+    "render:all": "npm run render:v1 && npm run render:v2 && npm run render:v3"
+  },
+  "dependencies": {
+    "remotion": "^4.0.0",
+    "@remotion/cli": "^4.0.0",
+    "@remotion/google-fonts": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.2.0"
+  }
+}
