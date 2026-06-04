@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080">
+    <title>Anúncio V2 — Identificação / Dor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg1:    #2D1B2E;
+            --bg2:    #421A38;
+            --text:   #F5EBE0;
+            --accent: #C9726A;
+            --gold:   #C9A96E;
+            --dim:    rgba(245,235,224,0.5);
+        }
+
+        html, body {
+            width: 1080px;
+            height: 1080px;
+            overflow: hidden;
+        }
+
+        .canvas {
+            width: 1080px;
+            height: 1080px;
+            position: relative;
+            background: linear-gradient(155deg, var(--bg1) 0%, var(--bg2) 55%, #4A1F3A 100%);
+        }
+
+        /* Subtle top-left glow */
+        .canvas::before {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 55% 50% at 5% 5%, rgba(201,169,110,0.10) 0%, transparent 55%),
+                radial-gradient(ellipse 60% 40% at 100% 100%, rgba(201,114,106,0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Safe area: 15% = 162px */
+        .safe {
+            position: absolute;
+            top: 162px; left: 162px;
+            right: 162px; bottom: 162px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* ── TOP LABEL ── */
+        .label-row {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .label-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(201,169,110,0.5), transparent);
+        }
+        .label {
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+        .label-line-r {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,169,110,0.5));
+        }
+
+        /* ── BULLETS ── */
+        .bullets {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .bullet {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .bullet-marker {
+            font-size: 34px;
+            color: var(--gold);
+            flex-shrink: 0;
+            line-height: 1;
+            margin-top: 4px;
+        }
+
+        .bullet-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 58px;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .bullet-text.last {
+            color: var(--accent);
+        }
+
+        /* ── BOTTOM STATEMENT ── */
+        .bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .bottom-rule {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(201,169,110,0.45), transparent 70%);
+            margin-bottom: 30px;
+        }
+
+        .resolution-lead {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 44px;
+            color: var(--dim);
+            line-height: 1.25;
+            margin-bottom: 10px;
+        }
+
+        .resolution-main {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 52px;
+            color: var(--text);
+            line-height: 1.15;
+        }
+
+        .resolution-main .gold-word { color: var(--gold); }
+    </style>
+</head>
+<body>
+<div class="canvas">
+    <div class="safe">
+
+        <div class="label-row">
+            <div class="label-line"></div>
+            <span class="label">Você se reconhece?</span>
+            <div class="label-line-r"></div>
+        </div>
+
+        <div class="bullets">
+            <div class="bullet">
+                <span class="bullet-marker">✦</span>
+                <span class="bullet-text">Come com cuidado</span>
+            </div>
+            <div class="bullet">
+                <span class="bullet-marker">✦</span>
+                <span class="bullet-text">Tenta se movimentar</span>
+            </div>
+            <div class="bullet">
+                <span class="bullet-marker" style="color: var(--accent);">✦</span>
+                <span class="bullet-text last">Ainda assim não vê resultado</span>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="bottom-rule"></div>
+            <p class="resolution-lead">Se você se identificou —</p>
+            <p class="resolution-main">a <span class="gold-word">explicação</span> está aqui.</p>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

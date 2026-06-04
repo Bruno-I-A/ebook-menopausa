@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080">
+    <title>Anúncio V1 — Quebra de Crença</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg1:      #2D1B2E;
+            --bg2:      #4A1F3A;
+            --text:     #F5EBE0;
+            --accent:   #C9726A;
+            --gold:     #C9A96E;
+            --dim:      rgba(245,235,224,0.55);
+        }
+
+        html, body {
+            width: 1080px;
+            height: 1080px;
+            overflow: hidden;
+        }
+
+        .canvas {
+            width: 1080px;
+            height: 1080px;
+            position: relative;
+            background: linear-gradient(145deg, var(--bg1) 0%, #3A1630 45%, var(--bg2) 100%);
+        }
+
+        /* Atmospheric glows */
+        .canvas::before {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 65% 55% at 90% 10%, rgba(201,169,110,0.14) 0%, transparent 55%),
+                radial-gradient(ellipse 45% 45% at 10% 95%, rgba(201,114,106,0.09) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Geometric accent: thin vertical line left of content */
+        .vert-line {
+            position: absolute;
+            left: 128px;
+            top: 162px;
+            bottom: 162px;
+            width: 2px;
+            background: linear-gradient(180deg, transparent, var(--gold) 25%, var(--gold) 75%, transparent);
+            opacity: 0.45;
+        }
+
+        /* Safe area: 15% = 162px */
+        .safe {
+            position: absolute;
+            top: 162px; left: 194px; /* slightly inside vert-line */
+            right: 162px; bottom: 162px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .category {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 34px;
+        }
+
+        .gold-rule {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), rgba(201,169,110,0.15));
+            margin-bottom: 50px;
+        }
+
+        .headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 84px;
+            font-weight: 700;
+            line-height: 1.07;
+            color: var(--text);
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+
+        .headline .italic { font-style: italic; }
+        .headline .accent { color: var(--accent); font-style: italic; }
+
+        .subline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 50px;
+            line-height: 1.2;
+            color: var(--dim);
+            margin-bottom: 60px;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(201,169,110,0.5), rgba(201,169,110,0.05));
+            margin-bottom: 38px;
+        }
+
+        .footer {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 30px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: var(--gold);
+        }
+
+        .footer .arrow { color: var(--accent); font-size: 34px; font-weight: 700; }
+    </style>
+</head>
+<body>
+<div class="canvas">
+    <div class="vert-line"></div>
+    <div class="safe">
+        <div class="category">Guia Digital</div>
+        <div class="gold-rule"></div>
+        <h1 class="headline">
+            A estratégia que<br>
+            funcionava <span class="accent">aos 30</span><br>
+            não funciona mais.
+        </h1>
+        <p class="subline">E não é culpa sua.</p>
+        <div class="divider"></div>
+        <p class="footer">Descubra o porquê <span class="arrow">→</span></p>
+    </div>
+</div>
+</body>
+</html>

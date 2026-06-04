@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080">
+    <title>Anúncio V3 — Curiosidade / Revelação</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg1:    #2D1B2E;
+            --bg2:    #4A1F3A;
+            --text:   #F5EBE0;
+            --accent: #C9726A;
+            --gold:   #C9A96E;
+            --dim:    rgba(245,235,224,0.45);
+        }
+
+        html, body {
+            width: 1080px;
+            height: 1080px;
+            overflow: hidden;
+        }
+
+        .canvas {
+            width: 1080px;
+            height: 1080px;
+            position: relative;
+            background: linear-gradient(160deg, var(--bg1) 0%, #381530 50%, var(--bg2) 100%);
+        }
+
+        /* Strong central glow — creates depth and draws eye to center */
+        .canvas::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 70% 65% at 50% 48%,
+                rgba(201,169,110,0.13) 0%,
+                rgba(74,31,58,0.3) 45%,
+                transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Faint concentric arc (SVG inline) */
+        .arc-svg {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.12;
+            pointer-events: none;
+        }
+
+        /* Safe area: 15% = 162px */
+        .safe {
+            position: absolute;
+            top: 162px; left: 162px;
+            right: 162px; bottom: 162px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        /* ── TOP WHISPER ── */
+        .top-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: rgba(201,169,110,0.5);
+        }
+
+        /* ── CENTER QUESTION ── */
+        .center-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        .question-pre {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 38px;
+            color: rgba(245,235,224,0.5);
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            letter-spacing: 6px;
+        }
+
+        .question-main {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 82px;
+            font-weight: 700;
+            line-height: 1.08;
+            color: var(--text);
+            margin-bottom: 18px;
+            letter-spacing: -1px;
+        }
+
+        .question-main .soft { color: rgba(245,235,224,0.7); }
+
+        .ellipsis-line {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-style: italic;
+            color: var(--accent);
+            letter-spacing: 8px;
+            line-height: 1;
+            /* fade out to the right */
+            background: linear-gradient(90deg, var(--accent), rgba(201,114,106,0.2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ── BOTTOM REVELATION ── */
+        .bottom-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .short-rule {
+            width: 56px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .revelation {
+            font-family: 'Inter', sans-serif;
+            font-size: 30px;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 0.3px;
+            text-align: center;
+        }
+
+        .revelation .arrow { color: var(--accent); font-weight: 700; margin-left: 8px; }
+    </style>
+</head>
+<body>
+<div class="canvas">
+
+    <!-- Faint concentric arcs via inline SVG -->
+    <svg class="arc-svg" width="680" height="680" viewBox="0 0 680 680" fill="none">
+        <circle cx="340" cy="340" r="300" stroke="#C9A96E" stroke-width="1"/>
+        <circle cx="340" cy="340" r="240" stroke="#C9A96E" stroke-width="0.6"/>
+        <circle cx="340" cy="340" r="180" stroke="#C9A96E" stroke-width="0.4"/>
+    </svg>
+
+    <div class="safe">
+
+        <div class="top-label">Guia Digital</div>
+
+        <div class="center-block">
+            <h1 class="question-main">
+                Por que você<br>
+                <span class="soft">come menos</span><br>
+                e mesmo assim...
+            </h1>
+            <div class="ellipsis-line">. . .</div>
+        </div>
+
+        <div class="bottom-block">
+            <div class="short-rule"></div>
+            <p class="revelation">A resposta que ninguém te deu. <span class="arrow">→</span></p>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
